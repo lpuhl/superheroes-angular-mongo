@@ -1,0 +1,24 @@
+<div ng-controller="formController">
+    <form id="heroinfo">
+        <label for="alias">Superhero Name</label>
+        <input ng-model="newHero.alias" type="text" id="alias" name="alias" />
+
+        <label for="first_name">First Name</label>
+        <input ng-model="newHero.first_name" type="text" id="first_name" name="first_name" />
+
+        <label for="last_name">Last Name:</label>
+        <input ng-model="newHero.last_name" type="text" id="last_name" name="last_name" />
+
+        <label for="city">City</label>
+        <input ng-model="newHero.city" type="text" id="city" name="city" />
+
+        <select ng-model="newHero.power_name" >
+          <option value="" style="display:none">Choose Superpower</option>
+          <option ng-repeat="power_name in powerNames" value="{{power_name}}">
+            {{power_name}}
+          </option>
+        </select>
+
+        <input ng-click="addHero()" type="submit" value="Add Superhero" />
+    </form>
+</div>
