@@ -8,17 +8,17 @@ var mongoose = require('mongoose');
 /** ---------- OUR MODULES ---------- **/
 var hero = require('./routes/heroesroute');
 
+/** ---------- MIDDLEWARE ---------- **/
+app.use(bodyParser.json());
+// Serve back static files
+app.use(express.static(path.join(__dirname, './public')));
+
 /** ---------- EXPRESS ROUTES ---------- **/
 app.use('/heroesroute', hero);
 // Handle index file separately
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './public/views/index.html'));
 });
-
-/** ---------- MIDDLEWARE ---------- **/
-app.use(bodyParser.json());
-// Serve back static files
-app.use(express.static(path.join(__dirname, './public')));
 
 /** ---------- MONGOOSE CONNECTION HANDLING ---------- **/
 var databaseUri = 'mongodb://localhost:27017/omicron';  //default port for mongo DBs

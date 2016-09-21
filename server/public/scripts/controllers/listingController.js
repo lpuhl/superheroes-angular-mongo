@@ -1,9 +1,7 @@
 myApp.controller("listingController", ["$scope", "$http", function($scope, $http) {
-  console.log("heroes controller working!");
+  console.log("listing controller working!");
   $scope.newHero = {};
   $scope.heroes = [];
-
-  $scope.powerNames = ['Invisibility', 'Flight', 'Super Speed', 'Heat Vision', 'Super Strength', 'Accelerated Healing', 'Power Blast', 'Animal Affinity'];
 
   getHeroes();
 

@@ -1,5 +1,5 @@
 myApp.controller("formController", ["$scope", "$http", function($scope, $http) {
-  console.log("heroes controller working!");
+  console.log("form controller working!");
   $scope.newHero = {};
   $scope.heroes = [];
 
@@ -8,6 +8,7 @@ myApp.controller("formController", ["$scope", "$http", function($scope, $http) {
   // getHeroes();
 
   $scope.addHero = function() {
+    console.log ('addHero running', $scope.newHero);
     var data = $scope.newHero;
     $http.post('/heroesroute', data)
       .then(function () {
